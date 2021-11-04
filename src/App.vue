@@ -5,7 +5,11 @@
       <router-link to="/about">About</router-link>
     </div>
     <h2 id="exam">📑Exam Answers✍️</h2>
+    <router-link to="/ex00">Ex00</router-link> |
     <router-link to="/ex01">Ex01</router-link> |
+    <router-link to="/ex02">Ex02</router-link> |
+    <router-link to="/ex03">Ex03</router-link> |
+    <router-link to="/ex04">Ex04</router-link> |
     <br />
 
     <router-view />

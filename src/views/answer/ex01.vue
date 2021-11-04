@@ -6,10 +6,15 @@
       <div>10年後の年齢:{{ ageIn10Years }}歳</div>
       <div>
         趣味:
-        <span v-for="hobby of hobbies" v-bind:key="hobby">{{ hobby }}</span>
+        <span v-for="hobby of hobbies" v-bind:key="hobby"
+          >{{ hobby }}&nbsp;
+        </span>
       </div>
+      <br />
       <div><a v-bind:href="url">自社ホームページ</a></div>
+      <br />
       <div><img v-bind:src="img" /></div>
+      <br />
     </div>
   </div>
 </template>
@@ -31,10 +36,10 @@ export default class ex01Component extends Vue {
 <style>
 .container {
   text-align: center;
-  border: solid 1px black;
 }
 .profile {
   display: inline-block;
   text-align: left;
+  border: solid 1px black;
 }
 </style>

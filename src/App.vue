@@ -4,7 +4,11 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <h2 id="exam">📑Exam Answers✍️</h2>
+    <router-link to="/ex01">Ex01</router-link> |
+    <br />
+
+    <router-view />
   </div>
 </template>
 

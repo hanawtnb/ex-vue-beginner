@@ -19,24 +19,24 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class ex04Component extends Vue {
-  private price1 = "";
-  private price2 = "";
-  private price3 = "";
+  private price1 = 0;
+  private price2 = 0;
+  private price3 = 0;
 
   get notIncludeTax() {
     if (!this.price1 && !this.price2 && !this.price3) return 0;
-    return parseInt(this.price1 + this.price2 + this.price3).toLocaleString();
-    //   .toString()
-    //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return (this.price1 + this.price2 + this.price3).toLocaleString();
+    // .toString()
+    // .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   get IncludeTax() {
     if (!this.price1 && !this.price2 && !this.price3) return 0;
     return Math.floor(
-      parseInt(this.price1 + this.price2 + this.price3) * 1.1
+      (this.price1 + this.price2 + this.price3) * 1.1
     ).toLocaleString();
-    //   .toString()
-    //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    // .toString()
+    // .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 }
 </script>

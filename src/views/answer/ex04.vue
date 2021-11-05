@@ -24,8 +24,9 @@ export default class ex04Component extends Vue {
   private price3 = "";
 
   get notIncludeTax() {
-    if (!this.price1 && !this.price2 && !this.price3) return 0;
-    return parseInt(this.price1 + this.price2 + this.price3).toLocaleString();
+    // if (!this.price1 && !this.price2 && !this.price3) return 0;
+    // 数字が入っていないのにparseINTで返しているのでNaNが出る。
+    return parseInt(this.price1 + this.price2 + this.price3);
     //   .toString()
     //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }

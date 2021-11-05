@@ -52,6 +52,7 @@ export default class ex02Component extends Vue {
   text-align: center;
 }
 .profile {
+  padding: 20px;
   display: inline-block;
   text-align: left;
   border: solid 1px black;

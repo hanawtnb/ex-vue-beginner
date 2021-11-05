@@ -30,6 +30,10 @@ const routes: Array<RouteConfig> = [
     component: () => import("../views/answer/ex04x.vue"),
   },
   {
+    path: "/ex05",
+    component: () => import("../views/answer/ex05.vue"),
+  },
+  {
     path: "/",
     name: "Home",
     component: Home,

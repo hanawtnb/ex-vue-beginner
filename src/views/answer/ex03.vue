@@ -19,10 +19,13 @@ export default class ex03Component extends Vue {
   //   private answer = parseInt(this.num1) + parseInt(this.num2);
 
   get answer() {
-    if (this.num1 !== null && this.num2 !== null) {
-      return this.num1 + this.num2;
-    } else {
+    console.log("num1:" + this.num1);
+    console.log("num2:" + this.num2);
+
+    if (this.num1 === "" || this.num2 === "") {
       return null;
+    } else {
+      return this.num1 + this.num2;
     }
   }
 }

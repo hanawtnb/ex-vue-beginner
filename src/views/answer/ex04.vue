@@ -9,8 +9,10 @@
     <div id="item3">
       <input type="number" name="item" v-model.trim.number="price3" />
     </div>
-    <div class="notIncludeTax">税抜価格：{{ notIncludeTax }}円</div>
-    <div class="IncludeTax">税込価格：{{ IncludeTax }}円</div>
+    <div class="notIncludeTax">
+      税抜価格：{{ notIncludeTax.toLocaleString() }}円
+    </div>
+    <div class="IncludeTax">税込価格：{{ IncludeTax.toLocaleString() }}円</div>
   </div>
 </template>
 
@@ -24,9 +26,9 @@ export default class ex04Component extends Vue {
   private price3 = "";
 
   get notIncludeTax() {
-    // if (!this.price1 && !this.price2 && !this.price3) return 0;
+    if (!this.price1 && !this.price2 && !this.price3) return 0;
     // 数字が入っていないのにparseINTで返しているのでNaNが出る。
-    return parseInt(this.price1 + this.price2 + this.price3).toLocaleString();
+    return parseInt(this.price1 + this.price2 + this.price3);
     // まだ数値が入っていなくて数値に編kなんできないためNanを返している。
     //   .toString()
     //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -34,9 +36,7 @@ export default class ex04Component extends Vue {
 
   get IncludeTax() {
     if (!this.price1 && !this.price2 && !this.price3) return 0;
-    return Math.floor(
-      parseInt(this.price1 + this.price2 + this.price3) * 1.1
-    ).toLocaleString();
+    return Math.floor(this.notIncludeTax * 1.1);
     //   .toString()
     //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }

@@ -21,7 +21,7 @@
       <div>年齢：{{ age }}</div>
       <div>
         コメント：<br /><br />
-        {{ comment }}
+        <pre>{{ comment }}</pre>
       </div>
     </div>
   </div>

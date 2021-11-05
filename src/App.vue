@@ -12,6 +12,7 @@
     <router-link to="/ex04">Ex04</router-link> |
     <router-link to="/ex04x">Ex04x</router-link> |
     <router-link to="/ex05">Ex05</router-link> |
+    <router-link to="/ex06">Ex06</router-link> |
     <br />
 
     <router-view />

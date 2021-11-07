@@ -1,9 +1,9 @@
 <template>
   <div class="cashier">
     <form>
-      <div v-for="i of itemPrices.length" v-bind:key="i">
-        <input type="number" v-model.number="itemPrices[i]" />
-        <button type="button" v-on:click="onDeleteItems(i)">削除</button>
+      <div v-for="itemList of itemPrices.length" v-bind:key="itemList.id">
+        <input type="number" v-model.number="itemPrices[itemList]" />
+        <button type="button" v-on:click="onDeleteItems(itemList)">削除</button>
       </div>
       <button type="button" v-on:click="onAddItems">追加</button>
     </form>
@@ -31,8 +31,8 @@ export default class ex06Component extends Vue {
     return Math.floor(this.notIncludeTax * 1.1);
   }
 
-  onDeleteItems(i: number) {
-    this.itemPrices.splice(i, 1);
+  onDeleteItems(itemList: number) {
+    this.itemPrices.splice(itemList, 1);
   }
 
   onAddItems() {

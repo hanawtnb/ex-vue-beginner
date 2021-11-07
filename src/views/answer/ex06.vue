@@ -19,24 +19,24 @@ import { Component, Vue } from "vue-property-decorator";
 export default class ex06Component extends Vue {
   private itemPrices = new Array<number>();
 
-  onAddItems() {
-    this.itemPrices.push(0);
+  get notIncludeTax() {
+    let notIncludeTax = 0;
+    for (let itemPrice of this.itemPrices) {
+      notIncludeTax += itemPrice;
+    }
+    return notIncludeTax;
+  }
+
+  get IncludeTax() {
+    return Math.floor(this.notIncludeTax * 1.1);
   }
 
   onDeleteItems(i: number) {
     this.itemPrices.splice(i, 1);
   }
 
-  get notIncludeTax() {
-    let includeTax = 0;
-    for (let itemPrice of this.itemPrices) {
-      includeTax += itemPrice;
-    }
-    return includeTax;
-  }
-
-  get IncludeTax() {
-    return Math.floor(this.notIncludeTax * 1.1);
+  onAddItems() {
+    this.itemPrices.push(0);
   }
 }
 </script>
